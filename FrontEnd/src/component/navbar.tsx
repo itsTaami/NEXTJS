@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import List from "./list";
 import Search from "./search";
+import Hamburger from "hamburger-react";
+import Burger from "./burger";
+interface CommonBurgerProps {
+  onClick?: () => void;
+}
 
 const navBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleMenuClick = () => {
+    console.log("Menu Clicked");
+
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <div className="bg-gray-800 h-20 flex justify-center items-center">
       <div className=" container mx-auto w-full flex justify-between">
@@ -9,27 +21,18 @@ const navBar = () => {
           Movie Review
         </h1>
         <Search />
-        <div className="flex justify-between w-2/5">
-          <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-            MOVIES
-          </button>
-          <button className=" text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-            TV SHOWS
-          </button>
-          <button className=" text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-            {" "}
-            MOVIE TRIVIA
-          </button>
-          <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-            NEWS
-          </button>
-          <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-            SHOWTIMES
-          </button>
-          <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-            LOGIN/SIGNUP
-          </button>
-        </div>
+        {isMenuOpen && <List />}
+        <button onClick={handleMenuClick}>Open menu</button>
+        {/* <Burger/> */}
+        {/* <Hamburger
+          color="#4FD1C5"
+          onToggle={(onClick) => {
+            if (onClick) {
+              <List />;
+            } else {
+            }
+          }}
+        /> */}
       </div>
     </div>
   );

@@ -78,6 +78,7 @@ export default function Home({ movies, pagination }: IMovies) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
+
       <div className="bg-violet-900   ">
         <h1 className="text-white font-bold text-center text-9xl">
           Welcome Movie Review List
@@ -138,7 +139,7 @@ export default function Home({ movies, pagination }: IMovies) {
                         className="text-orange-400"
                         href={`movies/${movie._id}`}
                       >
-                        {movie.title}
+                        Read More...
                       </Link>
                     </p>
 
