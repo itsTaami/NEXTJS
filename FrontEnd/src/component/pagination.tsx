@@ -16,7 +16,7 @@ const Pagination = ({
       >
         <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
       </button>
-      {pages.map((pg: Number) => (
+      {pages.map((pg: any) => (
         <button
           key={pg}
           onClick={setCur}
