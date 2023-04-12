@@ -3,6 +3,8 @@ import List from "./list";
 import Search from "./search";
 import Hamburger from "hamburger-react";
 import Burger from "./burger";
+import Menu from "./burger";
+import Drop from "./menu";
 interface CommonBurgerProps {
   onClick?: () => void;
 }
@@ -21,18 +23,22 @@ const navBar = () => {
           Movie Review
         </h1>
         <Search />
-        {isMenuOpen && <List />}
-        <button onClick={handleMenuClick}>Open menu</button>
+        <div className="flex flex-col">
+          {isMenuOpen && <List />}
+
+          <button onClick={handleMenuClick}>
+            <Hamburger color="#4FD1C5" />
+          </button>
+        </div>
+
+        {/* <button><Drop /></button> */}
+
+        {/* <Menu /> */}
+        {/* {isMenuOpen && <List />} */}
+        {/* <button onClick={handleMenuClick}>
+          <Hamburger color="#4FD1C5" />
+        </button> */}
         {/* <Burger/> */}
-        {/* <Hamburger
-          color="#4FD1C5"
-          onToggle={(onClick) => {
-            if (onClick) {
-              <List />;
-            } else {
-            }
-          }}
-        /> */}
       </div>
     </div>
   );
