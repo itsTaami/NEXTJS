@@ -3,7 +3,7 @@ import React from "react";
 const List = () => {
   const items = [
     {
-      title: "Movies",
+      title: "MOVIES",
     },
     {
       title: "TV SHOWS",
@@ -23,7 +23,7 @@ const List = () => {
   ];
   return (
     <>
-      <div className=" absolute top-20 right-72 p-5 bg-white w-48 text-center rounded-xl">
+      <div className=" absolute p-5 mt-14 -ml-16 bg-white w-48 text-center rounded-xl">
         {items.map((item) => (
           <div>
             <button

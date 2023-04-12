@@ -77,10 +77,10 @@ export default function Home({ movies, pagination }: IMovies) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
+      <NavBar movies={movies} />
 
-      <div className="bg-violet-900   ">
-        <h1 className="text-white font-bold text-center text-9xl">
+      <div className="bg-violet-900  ">
+        <h1 className="text-white container mx-auto font-bold text-center text-9xl pt-28">
           Welcome Movie Review List
         </h1>
         <div className=" mt-40 container mx-auto grid grid-cols-2 w-full ">
@@ -144,10 +144,10 @@ export default function Home({ movies, pagination }: IMovies) {
                     </p>
 
                     <div className="text-sm flex justify-between">
-                      <p className="  leading-none text-white text-3xl border w-2/6  self-center text-center rounded-2xl">
+                      <p className="  leading-none text-white text-3xl  w-2/6  self-center text-center ">
                         🍅 {movie.tomatoes.viewer.meter || "00"}%
                       </p>
-                      <p className="text-black leading-none text-3xl border w-2/6 self-center text-center rounded-2xl bg-yellow-400">
+                      <p className="text-white leading-none text-3xl w-2/6 self-center text-center  ">
                         🍿 {movie.imdb.rating}
                       </p>
                     </div>

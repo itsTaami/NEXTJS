@@ -9,7 +9,7 @@ interface CommonBurgerProps {
   onClick?: () => void;
 }
 
-const navBar = () => {
+const navBar = ({ movies }: any) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleMenuClick = () => {
     console.log("Menu Clicked");
@@ -22,13 +22,12 @@ const navBar = () => {
         <h1 className="font-bold text-2xl w-44 text-center self-center text-white">
           Movie Review
         </h1>
-        <Search />
+        <Search movies={movies} />
         <div className="flex flex-col">
-          {isMenuOpen && <List />}
-
           <button onClick={handleMenuClick}>
             <Hamburger color="#4FD1C5" />
           </button>
+          {isMenuOpen && <List />}
         </div>
 
         {/* <button><Drop /></button> */}
